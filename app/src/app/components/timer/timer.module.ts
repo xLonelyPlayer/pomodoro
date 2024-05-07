@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TimerComponent } from './timer/timer.component';
-import { ButtonsComponent } from './buttons/buttons.component';
-import { CycleComponent } from './cycle/cycle.component';
+import { ButtonsComponent } from './timer/buttons/buttons.component';
+import { CycleComponent } from './timer/cycle/cycle.component';
 
 @NgModule({
   declarations: [
