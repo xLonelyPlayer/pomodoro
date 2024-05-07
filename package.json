@@ -1,0 +1,23 @@
+{
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "description": "Pomodoro App",
+  "main": "index.js",
+  "scripts": {
+    "ng": "ng",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xLonelyPlayer/pomodoro.git"
+  },
+  "author": "Augusto Prodohl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xLonelyPlayer/pomodoro/issues"
+  },
+  "homepage": "https://github.com/xLonelyPlayer/pomodoro#readme",
+  "dependencies": {
+    "@angular/cli": "^17.3.6"
+  }
+}
