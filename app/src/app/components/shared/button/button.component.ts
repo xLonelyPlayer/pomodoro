@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { faPlay, faStop, faForward } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faStop, faForward, faCog } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-button',
@@ -11,11 +11,12 @@ export class ButtonComponent {
     'fas fa-play': faPlay,
     'fas fa-stop': faStop,
     'fas fa-forward': faForward,
+    'fas fa-cog': faCog,
   }
 
   @Input() type: string = "button";
-  @Input() class: string = "btn btn-outline-dark";
-  @Input() customClass: string = "m-1";
+  @Input() class: string = "btn btn-outline-dark m-1";
+  @Input() customClass: string = "";
   @Input() icon: string = "";
   @Output() onClick: EventEmitter<Event> = new EventEmitter<Event>();
 

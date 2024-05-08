@@ -1,6 +1,14 @@
 .main {
   background: lightblue;
   overflow: hidden;
+
+}
+
+.dragable-taskbar {
+  position: absolute;
+  width: 100vw;
+  height: 30px;
+  top: 0;
   -webkit-user-select: none;
   -webkit-app-region: drag;
 }
