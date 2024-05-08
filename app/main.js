@@ -1,14 +1,27 @@
 const { app, BrowserWindow } = require('electron')
 
+app.setAppUserModelId('Pomodoro');
+
 let win;
 
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 400,
-    height: 500,
+    width: 262,
+    height: 186,
     backgroundColor: '#ffffff',
-    icon: `file://${__dirname}/dist/assets/logo.png`,
+    icon: `file://${__dirname}/dist/app/browser/assets/logo.png`,
+    webPreferences: {
+      backgroundThrottling : false,
+    },
+    alwaysOnTop: true,
+    frame: false,
+    titleBarStyle: 'hidden',
+    titleBarOverlay: {
+      color: '#00000000',
+      symbolColor: '#000000'
+    },
+    thickFrame: true,
   })
 
 

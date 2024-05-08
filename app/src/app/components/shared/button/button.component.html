@@ -4,8 +4,7 @@
   (click)="onClick.emit($event)"
   >
   <fa-icon *ngIf="icon && icons[icon]"
-    [icon]="icons[icon]"
-    style="padding-right: 7px;">
+    [icon]="icons[icon]">
   </fa-icon>
   <ng-content select="[label]"></ng-content>
 </button>

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-actions',
@@ -7,6 +7,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 
 export class ActionsComponent {
+
+  @Input() minimalist: boolean = true;
 
   @Output() onStart: EventEmitter<Event> = new EventEmitter<Event>();
   @Output() onStop: EventEmitter<Event> = new EventEmitter<Event>();

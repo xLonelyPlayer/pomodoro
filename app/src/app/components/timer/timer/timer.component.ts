@@ -81,6 +81,8 @@ export class TimerComponent {
      else {
       new Notification('Cycle change', {
        body: this.currentCycle.id == 'short_break' ? 'Short break' : 'Work time',
+       icon: 'assets/logo.png',
+       tag: 'Pomodoro'
       });
      }
   }
@@ -98,7 +100,7 @@ export class TimerComponent {
 
   handleOnSkip(_e: Event): void {
     this.at_work = false;
-    this.alternateCycle({ notify: false, sound: false });
+    this.alternateCycle({ notify: true, sound: false });
     return;
   }
 }

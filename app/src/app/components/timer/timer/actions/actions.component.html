@@ -1,11 +1,11 @@
 <div>
   <app-button icon="fas fa-play" (onClick)="onStart.emit($event)">
-    <span label>Start</span>
+    <span *ngIf="!minimalist" label>Start</span>
   </app-button>
   <app-button icon="fas fa-stop" (onClick)="onStop.emit($event)">
-    <span label>Stop</span>
+    <span *ngIf="!minimalist" label>Stop</span>
   </app-button>
   <app-button icon="fas fa-forward" (onClick)="onSkip.emit($event)">
-    <span label>Skip</span>
+    <span *ngIf="!minimalist" label>Skip</span>
   </app-button>
 </div>

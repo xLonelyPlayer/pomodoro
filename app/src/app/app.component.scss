@@ -1,4 +1,6 @@
 .main {
   background: lightblue;
   overflow: hidden;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
 }
