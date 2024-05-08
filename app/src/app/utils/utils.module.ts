@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TimerModule } from './timer/timer.module';
+import Cycle from './modules/CycleViewModel';
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     CommonModule,
-    TimerModule,
   ],
   exports: [
-    TimerModule,
   ]
 })
-export class ComponentsModule { }
+
+export class UtilsModule { }
+
+export {
+  Cycle
+};

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cycle } from '../../../utils/utils.module';
 
 const SOUND_ON = true;
 const DEFAULT_WORK_TIME_DURATION = 1500;
@@ -10,6 +11,7 @@ const DEFAULT_SHORT_BREAK_DURATION = 300;
   styleUrl: './timer.component.scss'
 })
 export class TimerComponent {
+
   at_work: boolean = false;
   cycles: Cycle[] = [
     { order: 0, id: 'work_time', label: 'Work time', duration: DEFAULT_WORK_TIME_DURATION, active: true },
@@ -38,8 +40,6 @@ export class TimerComponent {
 
     if (this.currentCycle.duration <= -1) {
       this.alternateCycle();
-      this.playSound();
-      this.notify();
     }
 
     setTimeout(() => {
@@ -47,7 +47,7 @@ export class TimerComponent {
     }, 1000);
   }
 
-  alternateCycle(): void {
+  alternateCycle(options: AlternateCycleOptions = { notify: true, sound: true }): void {
     let index = this.currentCycle.order;
     let next = index + 1;
     if (next >= 2) { next = 0 }
@@ -55,6 +55,13 @@ export class TimerComponent {
     this.cycles[next].active = true;
     this.cycles[index].duration = this.cycles[index].id == 'work_time' ? DEFAULT_WORK_TIME_DURATION : DEFAULT_SHORT_BREAK_DURATION
     this.cycles[index].active = false;
+
+    if (options.sound) {
+      this.playSound();
+    }
+    if (options.notify) {
+      this.notify();
+    }
 
     return;
   }
@@ -78,22 +85,25 @@ export class TimerComponent {
      }
   }
 
-  handleOnStart(): void {
+  handleOnStart(_e: Event): void {
     this.at_work = true;
     this.workCycle();
     return;
   }
 
-  handleOnStop(): void {
+  handleOnStop(_e: Event): void {
     this.at_work = false;
+    return;
+  }
+
+  handleOnSkip(_e: Event): void {
+    this.at_work = false;
+    this.alternateCycle({ notify: false, sound: false });
     return;
   }
 }
 
-interface Cycle {
-  order: number;
-  id: string;
-  label: string;
-  duration: number;
-  active: boolean;
+interface AlternateCycleOptions {
+  notify?: boolean;
+  sound?: boolean;
 }

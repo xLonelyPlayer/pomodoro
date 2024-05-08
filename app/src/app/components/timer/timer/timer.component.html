@@ -1,12 +1,20 @@
 <div class="row">
   <div class="col-12 text-center">
-    <span>{{ currentCycle.label }}</span>
+    <app-cycle>
+      <h1 label>{{ currentCycle.label }}</h1>
+    </app-cycle>
   </div>
   <div class="col-12 text-center">
-    <span>{{ displayTimer }}</span>
+    <h1>{{ displayTimer }}</h1>
   </div>
   <div class="col-12 text-center">
-    <button type="button" class="btn btn-primary mx-1" (click)="handleOnStart()">Start</button>
-    <button type="button" class="btn btn-primary mx-1" (click)="handleOnStop()">Stop</button>
+    <app-actions
+      (onStart)="handleOnStart($event)"
+      (onStop)="handleOnStop($event)"
+      (onSkip)="handleOnSkip($event)"
+    >
+    </app-actions>
+    <!-- <button type="button" class="btn btn-primary mx-1" (click)="handleOnStart()">Start</button>
+    <button type="button" class="btn btn-primary mx-1" (click)="handleOnStop()">Stop</button> -->
   </div>
 </div>

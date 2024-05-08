@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cycle',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './cycle.component.scss'
 })
 export class CycleComponent {
+
+  @Input() read: boolean = true;
 
 }

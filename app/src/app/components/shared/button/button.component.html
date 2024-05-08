@@ -1,0 +1,11 @@
+<button
+  [type]="type"
+  [class]="class + ' ' + customClass"
+  (click)="onClick.emit($event)"
+  >
+  <fa-icon *ngIf="icon && icons[icon]"
+    [icon]="icons[icon]"
+    style="padding-right: 7px;">
+  </fa-icon>
+  <ng-content select="[label]"></ng-content>
+</button>
